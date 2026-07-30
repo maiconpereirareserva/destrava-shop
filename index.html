@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#3657d6">
+  <meta name="description" content="Assistente de gravação para vídeos naturais de TikTok Shop sem mostrar o rosto.">
+  <title>Destrava Shop</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+      <div class="brand">
+        <div class="brand-mark">DS</div>
+        <div>
+          <strong>Destrava Shop</strong>
+          <small>Grave com naturalidade</small>
+        </div>
+      </div>
+
+      <nav class="nav-list">
+        <button class="nav-item active" data-section="inicio"><span>🏠</span>Início</button>
+        <button class="nav-item" data-section="produto"><span>📦</span>Produto</button>
+        <button class="nav-item" data-section="roteiro"><span>💬</span>Roteiro natural</button>
+        <button class="nav-item" data-section="ambiente"><span>💡</span>Ambiente</button>
+        <button class="nav-item" data-section="treino"><span>🎙️</span>Treino de voz</button>
+        <button class="nav-item" data-section="gravacao"><span>🎬</span>Gravação</button>
+        <button class="nav-item" data-section="capcut"><span>✂️</span>CapCut</button>
+        <button class="nav-item" data-section="revisao"><span>✅</span>Revisão</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="streak-card">
+          <span>🔥</span>
+          <div><strong id="streakValue">0 dias</strong><small>sequência de treino</small></div>
+        </div>
+        <button class="ghost-button" id="exportDataBtn">Exportar dados</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        <div>
+          <p class="eyebrow">Seu diretor de gravação</p>
+          <h1 id="pageTitle">Início</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" id="themeToggle" aria-label="Alternar tema">🌙</button>
+          <button class="primary-button compact" data-go="produto">Novo vídeo</button>
+        </div>
+      </header>
+
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Progresso do vídeo</span><strong id="progressText">0%</strong></div>
+        <div class="progress-bar"><span id="progressFill"></span></div>
+      </div>
+
+      <section class="page-section active" id="inicio">
+        <div class="hero-card gradient-blue">
+          <div class="hero-copy">
+            <span class="pill light">Sem mostrar o rosto</span>
+            <h2>Transforme sua opinião em uma conversa natural.</h2>
+            <p>O app guia vocês desde o produto até a edição no CapCut, com falas curtas, cenas simples e orientações práticas.</p>
+            <div class="hero-actions">
+              <button class="primary-button light" data-go="produto">Começar novo vídeo</button>
+              <button class="secondary-button light-border" data-go="treino">Treinar minha voz</button>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <span class="record-dot"></span>
+                <div class="product-orbit">📦</div>
+                <div class="sound-wave"><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card tone-purple"><span>📝</span><div><strong id="metricScripts">0</strong><small>roteiros criados</small></div></article>
+          <article class="metric-card tone-green"><span>🎙️</span><div><strong id="metricPractices">0</strong><small>treinos concluídos</small></div></article>
+          <article class="metric-card tone-yellow"><span>🎬</span><div><strong id="metricVideos">0</strong><small>vídeos preparados</small></div></article>
+          <article class="metric-card tone-cyan"><span>⏱️</span><div><strong id="metricMinutes">0 min</strong><small>tempo praticado</small></div></article>
+        </div>
+
+        <div class="section-heading">
+          <div><span class="eyebrow">Caminho completo</span><h2>O que fazer agora</h2></div>
+        </div>
+
+        <div class="step-grid">
+          <button class="step-card tone-blue" data-go="produto"><span class="step-number">1</span><div class="step-icon">📦</div><h3>Conte sobre o produto</h3><p>Responda perguntas simples sobre sua experiência.</p></button>
+          <button class="step-card tone-purple" data-go="roteiro"><span class="step-number">2</span><div class="step-icon">💬</div><h3>Crie uma fala natural</h3><p>Receba um roteiro com seu jeito de conversar.</p></button>
+          <button class="step-card tone-green" data-go="ambiente"><span class="step-number">3</span><div class="step-icon">💡</div><h3>Prepare o ambiente</h3><p>Confira luz, ruído, fundo e enquadramento.</p></button>
+          <button class="step-card tone-pink" data-go="treino"><span class="step-number">4</span><div class="step-icon">🎙️</div><h3>Treine sem pressão</h3><p>Pratique frase por frase antes de gravar.</p></button>
+          <button class="step-card tone-yellow" data-go="gravacao"><span class="step-number">5</span><div class="step-icon">🎬</div><h3>Grave por cenas</h3><p>Mostre somente mãos, produto e uso real.</p></button>
+          <button class="step-card tone-cyan" data-go="capcut"><span class="step-number">6</span><div class="step-icon">✂️</div><h3>Edite no CapCut</h3><p>Siga a ordem, os cortes e os textos sugeridos.</p></button>
+        </div>
+      </section>
+
+      <section class="page-section" id="produto">
+        <div class="section-heading">
+          <div><span class="eyebrow">Etapa 1</span><h2>Conte o que você realmente pensa</h2><p>Quanto mais sincera for a resposta, mais natural ficará a fala.</p></div>
+          <span class="section-badge tone-blue">Produto</span>
+        </div>
+
+        <div class="two-column">
+          <form class="panel" id="productForm">
+            <div class="form-grid">
+              <label class="field full"><span>Nome do produto</span><input id="productName" required placeholder="Ex.: mini seladora portátil"></label>
+              <label class="field"><span>Categoria</span><select id="productCategory"><option>Casa e organização</option><option>Beleza</option><option>Cozinha</option><option>Eletrônicos</option><option>Moda</option><option>Ferramentas</option><option>Pet</option><option>Outro</option></select></label>
+              <label class="field"><span>Duração desejada</span><select id="videoDuration"><option value="15">15 segundos</option><option value="30" selected>30 segundos</option><option value="45">45 segundos</option><option value="60">60 segundos</option></select></label>
+              <label class="field full"><span>Que problema ele ajuda a resolver?</span><textarea id="productProblem" required placeholder="Ex.: os pacotes ficavam abertos e os alimentos perdiam a crocância"></textarea></label>
+              <label class="field full"><span>O que mais chamou sua atenção?</span><textarea id="productBenefit" required placeholder="Ex.: é pequeno, esquenta rápido e cabe na gaveta"></textarea></label>
+              <label class="field full"><span>Como foi sua experiência real?</span><textarea id="productExperience" required placeholder="Ex.: testei em três embalagens e fechou melhor do que eu esperava"></textarea></label>
+              <label class="field"><span>Para quem você indicaria?</span><input id="productAudience" placeholder="Ex.: quem mora sozinho"></label>
+              <label class="field"><span>Algum ponto de atenção?</span><input id="productCaveat" placeholder="Ex.: precisa de duas pilhas"></label>
+              <label class="field full"><span>Como você falaria disso com um amigo?</span><textarea id="personalPhrase" placeholder="Ex.: cara, olha essa coisinha que resolveu a bagunça aqui em casa"></textarea></label>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="secondary-button" id="fillExampleBtn">Preencher exemplo</button>
+              <button type="submit" class="primary-button">Salvar e criar roteiro</button>
+            </div>
+          </form>
+
+          <aside class="tip-panel tone-blue-soft">
+            <span class="tip-icon">💡</span>
+            <h3>Não tente parecer vendedor</h3>
+            <p>Imagine que alguém perguntou: “Isso presta mesmo?”. Sua resposta deve parecer uma conversa, não uma propaganda.</p>
+            <ul class="clean-list">
+              <li>Use palavras que vocês já usam no dia a dia.</li>
+              <li>Conte uma situação real.</li>
+              <li>Evite promessas que não podem ser comprovadas.</li>
+              <li>Deixe espaço para uma opinião equilibrada.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page-section" id="roteiro">
+        <div class="section-heading">
+          <div><span class="eyebrow">Etapa 2</span><h2>Roteiro natural, cena por cena</h2><p>Escolha o estilo e gere uma versão que soe como uma conversa.</p></div>
+          <span class="section-badge tone-purple">Roteiro</span>
+        </div>
+
+        <div class="panel controls-panel">
+          <div class="choice-group">
+            <span>Estilo da fala</span>
+            <div class="chip-row" id="styleChips">
+              <button class="choice-chip active" data-style="amigo">Conversa com amigo</button>
+              <button class="choice-chip" data-style="descoberta">Descoberta sincera</button>
+              <button class="choice-chip" data-style="teste">Teste real</button>
+              <button class="choice-chip" data-style="calmo">Calmo e direto</button>
+              <button class="choice-chip" data-style="casal">Conversa em casal</button>
+            </div>
+          </div>
+          <div class="choice-group">
+            <span>Nível de energia</span>
+            <input type="range" min="1" max="3" value="2" id="energyRange">
+            <div class="range-labels"><small>Tranquilo</small><small>Natural</small><small>Animado</small></div>
+          </div>
+          <button class="primary-button" id="generateScriptBtn">Gerar novo roteiro</button>
+        </div>
+
+        <div class="empty-state" id="scriptEmpty">
+          <div>💬</div><h3>Seu roteiro aparecerá aqui</h3><p>Cadastre o produto ou use o exemplo para começar.</p><button class="primary-button" data-go="produto">Cadastrar produto</button>
+        </div>
+
+        <div id="scriptResult" class="hidden">
+          <div class="script-toolbar">
+            <div><span class="pill tone-purple-soft" id="scriptDurationBadge">30 segundos</span><span class="pill neutral" id="scriptStyleBadge">Conversa com amigo</span></div>
+            <div><button class="secondary-button compact" id="simplifyBtn">Simplificar</button><button class="secondary-button compact" id="regenerateBtn">Falar de outro jeito</button><button class="primary-button compact" id="copyScriptBtn">Copiar roteiro</button></div>
+          </div>
+          <div class="scene-list" id="sceneList"></div>
+        </div>
+      </section>
+
+      <section class="page-section" id="ambiente">
+        <div class="section-heading">
+          <div><span class="eyebrow">Etapa 3</span><h2>Prepare um ambiente que valorize o produto</h2><p>Use o assistente para conferir o espaço antes de gravar.</p></div>
+          <span class="section-badge tone-green">Ambiente</span>
+        </div>
+
+        <div class="environment-grid">
+          <div class="panel camera-panel">
+            <div class="camera-preview" id="cameraPreview">
+              <video id="cameraVideo" playsinline muted></video>
+              <div class="safe-frame"><span>ÁREA SEGURA DO PRODUTO</span></div>
+              <div class="camera-placeholder" id="cameraPlaceholder"><span>📷</span><strong>Visualize o enquadramento</strong><small>A câmera só será usada após sua autorização.</small></div>
+            </div>
+            <div class="camera-actions"><button class="primary-button" id="startCameraBtn">Abrir câmera</button><button class="secondary-button" id="stopCameraBtn" disabled>Fechar câmera</button></div>
+          </div>
+
+          <div class="panel">
+            <div class="assistant-status"><span class="status-dot"></span><div><strong>Assistente de ambiente</strong><small id="environmentStatus">Faça a verificação abaixo.</small></div></div>
+            <div class="check-list" id="environmentChecklist">
+              <label><input type="checkbox" data-check="light"><span><strong>Luz vindo da frente ou lateral</strong><small>Evite janela ou luminária atrás do produto.</small></span></label>
+              <label><input type="checkbox" data-check="lens"><span><strong>Lente do celular limpa</strong><small>Uma limpeza rápida evita imagem embaçada.</small></span></label>
+              <label><input type="checkbox" data-check="background"><span><strong>Fundo simples e organizado</strong><small>Retire objetos que disputem atenção.</small></span></label>
+              <label><input type="checkbox" data-check="support"><span><strong>Celular apoiado e firme</strong><small>Use tripé, pilha de livros ou suporte.</small></span></label>
+              <label><input type="checkbox" data-check="product"><span><strong>Produto limpo e completo</strong><small>Separe embalagem, acessórios e itens de demonstração.</small></span></label>
+              <label><input type="checkbox" data-check="noise"><span><strong>Ambiente sem ruído forte</strong><small>Feche janelas e desligue aparelhos ruidosos.</small></span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="recommendation-grid">
+          <article class="recommendation-card tone-green"><span>🪟</span><h3>Luz simples</h3><p>Grave de frente para uma janela. Em dias muito claros, use uma cortina fina para suavizar.</p></article>
+          <article class="recommendation-card tone-cyan"><span>🧱</span><h3>Fundo limpo</h3><p>Cartolina, tecido liso, mesa organizada ou um ambiente real relacionado ao produto.</p></article>
+          <article class="recommendation-card tone-purple"><span>📱</span><h3>Enquadramento 9:16</h3><p>Deixe o produto no centro e evite informações importantes na lateral direita e na parte inferior.</p></article>
+          <article class="recommendation-card tone-pink"><span>🎤</span><h3>Voz mais próxima</h3><p>Fale perto do celular ou grave a narração depois, em um ambiente silencioso.</p></article>
+        </div>
+      </section>
+
+      <section class="page-section" id="treino">
+        <div class="section-heading">
+          <div><span class="eyebrow">Etapa 4</span><h2>Treine uma frase por vez</h2><p>Sem obrigação de publicar. O objetivo é ganhar familiaridade com a própria voz.</p></div>
+          <span class="section-badge tone-pink">Treino</span>
+        </div>
+
+        <div class="training-layout">
+          <div class="panel teleprompter-card">
+            <div class="teleprompter-top"><span class="pill tone-pink-soft" id="trainingSceneLabel">Cena 1</span><span id="trainingProgress">1 de 1</span></div>
+            <div class="teleprompter-text" id="trainingText">Crie um roteiro para começar o treino.</div>
+            <div class="training-controls">
+              <button class="icon-button large" id="prevLineBtn">←</button>
+              <button class="primary-button round" id="recordPracticeBtn">● Praticar</button>
+              <button class="icon-button large" id="nextLineBtn">→</button>
+            </div>
+            <div class="voice-meter"><span>Volume da voz</span><div class="meter"><i id="voiceLevel"></i></div><small id="voiceFeedback">Ative o microfone para medir.</small></div>
+          </div>
+
+          <aside class="panel mission-panel tone-pink-soft">
+            <span class="tip-icon">🎯</span><h3>Missão de hoje</h3><p id="dailyMission">Grave uma frase curta sem se preocupar em publicar.</p>
+            <div class="mission-steps">
+              <label><input type="checkbox" class="mission-check"><span>Ler a frase em voz baixa</span></label>
+              <label><input type="checkbox" class="mission-check"><span>Falar olhando para o produto</span></label>
+              <label><input type="checkbox" class="mission-check"><span>Fazer três tentativas</span></label>
+              <label><input type="checkbox" class="mission-check"><span>Ouvir sem apagar imediatamente</span></label>
+            </div>
+            <button class="secondary-button full" id="completeTrainingBtn">Concluir treino</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page-section" id="gravacao">
+        <div class="section-heading">
+          <div><span class="eyebrow">Etapa 5</span><h2>Grave o vídeo em pequenas cenas</h2><p>Você não precisa acertar tudo de uma vez.</p></div>
+          <span class="section-badge tone-yellow">Gravação</span>
+        </div>
+
+        <div class="recording-board" id="recordingBoard"></div>
+        <div class="empty-state" id="recordingEmpty"><div>🎬</div><h3>Crie o roteiro primeiro</h3><p>As cenas serão organizadas automaticamente aqui.</p><button class="primary-button" data-go="roteiro">Ir para roteiro</button></div>
+      </section>
+
+      <section class="page-section" id="capcut">
+        <div class="section-heading">
+          <div><span class="eyebrow">Etapa 6</span><h2>Guia de edição no CapCut</h2><p>Monte o vídeo de forma simples, dinâmica e sem exageros.</p></div>
+          <span class="section-badge tone-cyan">CapCut</span>
+        </div>
+
+        <div class="capcut-layout">
+          <div class="panel timeline-panel">
+            <div class="timeline-header"><h3>Ordem sugerida</h3><button class="secondary-button compact" id="copyEditPlanBtn">Copiar plano</button></div>
+            <div id="editTimeline" class="edit-timeline"></div>
+          </div>
+          <aside class="panel capcut-check-panel">
+            <h3>Checklist de edição</h3>
+            <div class="check-list compact" id="capcutChecklist">
+              <label><input type="checkbox"><span><strong>Corte o silêncio inicial</strong><small>O vídeo deve começar imediatamente.</small></span></label>
+              <label><input type="checkbox"><span><strong>Ative legendas automáticas</strong><small>Revise o nome do produto e palavras importantes.</small></span></label>
+              <label><input type="checkbox"><span><strong>Música abaixo da voz</strong><small>A narração deve ser o som principal.</small></span></label>
+              <label><input type="checkbox"><span><strong>Troca visual frequente</strong><small>Use cortes ou detalhes a cada 2–3 segundos.</small></span></label>
+              <label><input type="checkbox"><span><strong>Textos dentro da área segura</strong><small>Evite a lateral direita e a parte inferior.</small></span></label>
+              <label><input type="checkbox"><span><strong>Exportação vertical</strong><small>Formato 9:16, sem faixas pretas.</small></span></label>
+            </div>
+          </aside>
+        </div>
+
+        <div class="panel text-suggestions">
+          <div class="timeline-header"><h3>Textos prontos para tela</h3><button class="secondary-button compact" id="copyOnScreenTextBtn">Copiar textos</button></div>
+          <div class="text-chip-grid" id="onScreenTexts"></div>
+        </div>
+      </section>
+
+      <section class="page-section" id="revisao">
+        <div class="section-heading">
+          <div><span class="eyebrow">Etapa 7</span><h2>Revisão antes de publicar</h2><p>Uma checagem objetiva para evitar retrabalho.</p></div>
+          <span class="section-badge tone-blue">Revisão</span>
+        </div>
+
+        <div class="review-layout">
+          <div class="panel">
+            <div class="review-score"><div class="score-ring"><strong id="reviewScore">0%</strong><span>pronto</span></div><div><h3 id="reviewTitle">Complete o processo</h3><p id="reviewMessage">Marque os itens abaixo conforme concluir.</p></div></div>
+            <div class="check-list review-list" id="reviewChecklist">
+              <label><input type="checkbox"><span><strong>O produto aparece nos primeiros segundos</strong></span></label>
+              <label><input type="checkbox"><span><strong>A fala parece uma conversa real</strong></span></label>
+              <label><input type="checkbox"><span><strong>A demonstração mostra o benefício</strong></span></label>
+              <label><input type="checkbox"><span><strong>Não há promessas exageradas</strong></span></label>
+              <label><input type="checkbox"><span><strong>A voz está clara e acima da música</strong></span></label>
+              <label><input type="checkbox"><span><strong>As legendas estão corretas</strong></span></label>
+              <label><input type="checkbox"><span><strong>O vídeo está em 9:16</strong></span></label>
+              <label><input type="checkbox"><span><strong>O encerramento é natural</strong></span></label>
+            </div>
+            <button class="primary-button full" id="finishVideoBtn">Marcar vídeo como preparado</button>
+          </div>
+
+          <aside class="panel publish-panel gradient-purple">
+            <span class="pill light">Última orientação</span>
+            <h3>Não espere se sentir 100% pronto.</h3>
+            <p>A confiança costuma aparecer depois das primeiras publicações, não antes. Escolha uma versão clara e honesta, publique e use o próximo vídeo para melhorar um ponto específico.</p>
+            <div class="publish-stats"><div><strong id="finalScenes">0</strong><small>cenas</small></div><div><strong id="finalDuration">0s</strong><small>duração</small></div><div><strong id="finalChecks">0/8</strong><small>checagens</small></div></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <input type="file" id="importDataInput" accept="application/json" hidden>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
